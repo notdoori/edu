@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초 익히기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- js code-->
+        <!--<button onClick="alert('hello kossie coder')">Click Me</button>-->
+        <!-- vue code-->
+        <!--
+        {{ year }} <br>
+        <button v-on:click="plus">더하기</button>
+        <button v-on:click="minus">빼기</button>
+        -->
+        <!-- form 태그의 submit 이벤트는 수행 후 페이지 자동 리로드 됨.
+             페이지 리로드를 수행하지 않게 하려면 이벤트 수식어(Event Modifier) 사용 해야 함.-->
+        <form v-on:submit.prevent="submit"> 
+            <input type="text"><br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        new Vue({
+            el : '#app',
+            data : {
+                year: 2018,
+            },
+            methods : {
+                plus() {
+                    this.year++;
+                },
+                minus() {
+                    this.year--;
+                },
+                submit() {
+                    alert("Submited");
+                    console.log("hello");
+                }
+            }
+        })
+    </script>
+</body>
+</html>

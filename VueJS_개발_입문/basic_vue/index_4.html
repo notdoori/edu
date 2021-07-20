@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>뷰 기초 익히기</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- computed 속성 -->
+        <!--  인스턴스의 데이터(data:) 변경을 관찰하고 이에 반응하는 속성.
+            최초 한번 수행 후 인스턴스의 데이터가 변경되지 않는 한 다시 수행 되지 않음.
+            Vue Instance 의 computed: 에 함수 처럼 구현 하지만 사용은 data 처럼 
+            reversedMessage() X, reversedMessage O
+        -->
+        <button v-on:click="changeMessage">Click</button>
+        {{ reversedMessage }}
+        {{ reversedMessage }}
+        {{ reversedMessage }}
+    </div>
+    <script>
+        new Vue({
+            el : '#app',
+            data : {
+                message: '헬로우'
+            },
+            methods : {
+                changeMessage() {
+                    this.message = '코지코더';
+                }
+            },
+            computed: { /* 최초 한번 수행 후 message 가 변경되지 않는 한 다시 수행 되지 않음. */
+                reversedMessage() {
+                    return this.message.split('').reverse().join('');
+                }
+            }
+        })
+    </script>
+</body>
+</html>

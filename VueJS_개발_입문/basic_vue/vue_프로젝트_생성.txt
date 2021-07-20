@@ -1,0 +1,19 @@
+vue 프로젝트 생성
+
+* node.js 기본 설치
+
+1) install vue cli
+   vue cli 설치 : npm install -g @vue/cli 
+
+2) 프로젝트 생성
+   vue create 프로젝트명
+   
+===> vue cli 설치 없이 vue 설치 및 프로젝트 생성 : npx @vue/cli create 프로젝트명
+   
+3) build
+   terminal -> run npm serve
+   
+   * 파일이 변경 되면 자동으로 다시 build 되고 웹 페이지 리로드 됨.
+
+4) 배포
+    terminal -> run npm build
